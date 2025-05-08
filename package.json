@@ -3,12 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
-    "dev:testnet": "cross-env NETWORK=testnet next dev --turbopack",
-    "dev:mainnet": "cross-env NETWORK=mainnet next dev --turbopack",
-    "build": "next build",
-    "build:testnet": "cross-env NETWORK=testnet next build",
-    "build:mainnet": "cross-env NETWORK=mainnet next build",
+    "dev": "npm run generate && next dev --turbopack",
+    "dev:testnet": "cross-env NETWORK=testnet npm run generate && next dev --turbopack",
+    "dev:mainnet": "cross-env NETWORK=mainnet npm run generate && next dev --turbopack",
+    "build": "npm run generate && next build",
+    "build:testnet": "cross-env NETWORK=testnet npm run generate && next build",
+    "build:mainnet": "cross-env NETWORK=mainnet npm run generate && next build",
     "start": "next start",
     "lint": "next lint",
     "generate": "wagmi generate"
