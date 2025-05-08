@@ -8,7 +8,14 @@ const env = fs.readFileSync(`.env.${network}`);
 const config = dotenv.parse(env);
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  reactStrictMode: true,
+  webpack: (config) => {
+    config.externals.push('pino-pretty', 'lokijs', 'encoding');
+    return config;
+  },
+  experimental: {
+    optimizePackageImports: ['@mantine/core', '@mantine/notifications'],
+  },
   env: {
     NEXT_PUBLIC_STAKING_CONTRACT_ADDRESS:
       config.NEXT_PUBLIC_STAKING_CONTRACT_ADDRESS,
