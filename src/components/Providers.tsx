@@ -21,7 +21,7 @@ const queryClient = new QueryClient({
 
 const config = getDefaultConfig({
   appName: 'VBEA Staking',
-  projectId: '2871ba69c10c6c0612dcc28da2dcceaa',
+  projectId: '27dfdead3b64d9e6e6401a35369c626d',
   chains: [process.env.NEXT_PUBLIC_NETWORK === 'mainnet' ? base : baseSepolia],
   ssr: true,
 });
